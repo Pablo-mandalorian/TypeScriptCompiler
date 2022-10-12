@@ -1,0 +1,56 @@
+package back.analizador;
+import java_cup.runtime.*;
+import lexico.*;
+
+parser code
+{:
+    private Symbol s;
+    public void syntaxis_error(Symbol s){
+        this.s=s;
+        System.out.println("compiler has detected a syntax error at line " + s.left 
+        + " column " + s.right);
+    }
+    public Symbol getS(){
+        return s;
+    }
+    
+    // Método ante algún error sintáctico en el que ya no es posible una recuperación de errores.
+    public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception{ 
+        System.out.println("Error síntactico irrecuperable en la Línea " + 
+        (s.left)+ " Columna "+s.right+". Componente " + s.value + 
+        " no reconocido."); 
+    }  
+:} 
+
+terminal String BREAK, CASE, CATCH, CLASS, CONST, CONTINUE, DEBUGGER, DEFAULT, DELETE, DO, ELSE, ENUM;
+terminal String EXPORT, EXTENDS, FALSE, FINALLY, FOR, FUNCTION, IF, IMPORT, IN, INSTANCEOF, NEW, NULL;
+terminal String RETURN, SUPER, SWITCH, THIS, THROW, TRUE, TRY, TYPEOF, VAR, VOID, WHILE, WITH, SUMA, RESTA;
+terminal String DIVISION,MULTIPLICACION, MODULO, MAYOR, MENOR, MENORIGUAL, MAYORIGUAL, IGUALIGUAL, DIFERENTEDE;
+terminal String ANY, BOOLEAN, CONSTRUCTOR, DECLARE, GET, MODULE, REQUIRE, NUMBER, SET, STRING;
+terminal String TYPE, FROM, OF;
+terminal String AS, IMPLEMENTS, LET, PACKAGE, PRIVATE, PROTECTED, PUBLIC, STATIC, YIELD;
+terminal String STRING_LITERAL, LLAVE_APERTURA, LLAVE_CIERRE, PARENTESIS_APERTURA, PARENTESIS_CIERRE;
+terminal String PUNTO_COMA, PUNTO, CONSOLE, LOG, COMILLA_SIMPLE, COMILLAS_DOBLES, IDENTIFICADOR;
+terminal String COMA, COMENTARIO, ESPACIO, IGUAL, NUMEROS, DOS_PUNTOS;
+
+non terminal compilator;
+non terminal importsDeclaration;
+non terminal declaracionDeDatos;
+non terminal ws, asignacion, StringLiteral, NumericLiteral;
+non terminal instrucciones;
+non terminal instruccion;
+
+start with compilator;
+
+compilator ::= importsDeclaration | declaracionDeDatos;
+
+importsDeclaration ::= IMPORT ws LLAVE_APERTURA IDENTIFICADOR LLAVE_CIERRE ws FROM COMILLA_SIMPLE IDENTIFICADOR COMILLA_SIMPLE PUNTO_COMA;
+
+asignacion ::= declaracionDeDatos ws IGUAL ws  NumericLiteral | StringLiteral;
+
+declaracionDeDatos ::= IDENTIFICADOR DOS_PUNTOS ws ANY | IDENTIFICADOR DOS_PUNTOS ws BOOLEAN | IDENTIFICADOR DOS_PUNTOS ws NUMBER | IDENTIFICADOR DOS_PUNTOS ws STRING | IDENTIFICADOR DOS_PUNTOS ws VOID; 
+
+StringLiteral ::= STRING_LITERAL;
+NumericLiteral ::= NUMEROS;
+
+ws ::= ESPACIO;
