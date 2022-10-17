@@ -444,6 +444,11 @@ public class Salida extends javax.swing.JPanel {
                         System.out.println(" Dos Puntos \n");
                         txtSalida.append(" Dos Puntos \n");
                     }
+                    case 88 -> {
+                        System.out.println("Console.log");
+                        txtSalida.append(" Console.log \n");
+                    }
+
                     default -> {
                         System.out.println("\nFin del Archivo \n");
                         txtSalida.append("\nFin del Archivo \n");

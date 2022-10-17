@@ -119,6 +119,7 @@ public class AnalisisLexico{
                     case 85 -> System.out.println(" Igual \n");
                     case 86 -> System.out.println(" Numero \n");
                     case 87 -> System.out.println(" Dos Puntos \n");
+                    case 88 -> System.out.println("Console.log");
                     default -> {
                         System.out.println("\nFin del Archivo \n");
                         break loop;

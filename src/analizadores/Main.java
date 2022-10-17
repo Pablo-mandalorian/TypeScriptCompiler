@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package back.analizador;
+package analizadores;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -17,8 +17,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //String rutaLexer = "/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/back/analizador/Lexxer.jflex";
-        String rutaCup = "/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/back/analizador/";
+        //String rutaLexer = "/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/analizadores/Lexxer.jflex";
+        String rutaCup = "/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/analizadores/";
         //generarJavaLexer(rutaLexer);
         generarJavaCup(rutaCup);
     }

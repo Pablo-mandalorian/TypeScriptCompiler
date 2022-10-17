@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/lexico/AnalisisLexico.java</file>
-            <file>file:/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/back/analizador/sintaxis.cup</file>
-            <file>file:/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/back/analizador/Main.java</file>
-            <file>file:/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/lexico/Lexico.java</file>
-            <file>file:/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/back/analizador/Lexxer.jflex</file>
-            <file>file:/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/back/analizador/sym.java</file>
+            <file>file:/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/analizadores/Main.java</file>
+            <file>file:/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/analizadores/Lexxer.jflex</file>
+            <file>file:/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/analizadores/sintaxis.cup</file>
+            <file>file:/Users/andrestellesrivera/NetBeansProjects/Compileeer/src/analizadores/Lexico.java</file>
         </group>
     </open-files>
 </project-private>
