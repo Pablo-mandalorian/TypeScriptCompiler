@@ -126,6 +126,8 @@ COMENTMULTILINEA ="/*""/"*([^*/]|[^*]"/"|"*"[^/])*"*"*"*/"
 {D} {return new Symbol(sym.ENTERO,yyline,yychar, yytext());} 
 {DD} {return new Symbol(sym.DECIMAL,yyline,yychar, yytext());} 
 
+/* Hola */
+
 . {
     System.err.println("Este es un error lexico: "+yytext()+", en la linea: "+yyline+", en la columna: "+yychar);
 }
