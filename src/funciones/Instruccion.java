@@ -1,4 +1,4 @@
-package arbol;
+package funciones;
 
 /**
  * Interfaz que implementan todas las clases que son instrucción y que contiene 
@@ -6,7 +6,6 @@ package arbol;
  * este caso, todas las instrucciones pueden ser ejecutadas, por lo que todas las
  * clases que implementen esta interfaz están obligadas a tener un método programado
  * para la ejecución.
- * @author Erick
  */
 public interface Instruccion {
     /**

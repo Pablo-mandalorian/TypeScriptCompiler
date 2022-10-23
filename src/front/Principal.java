@@ -320,7 +320,7 @@ public class Principal extends javax.swing.JFrame {
                     }
                     
                     s = sb.toString();
-                    System.out.println(s);
+                    //System.out.println(s);
                     
                 } catch (IOException ex) {
                     Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -369,7 +369,7 @@ public class Principal extends javax.swing.JFrame {
                 tpnSalidas.addTab(archivo.getName() + " Output", salida);
                 tpnSalidas.setSelectedComponent(salida);                 
         }        
-        salida.compilar();
+        salida.ejecutar();
     }//GEN-LAST:event_btnCompilarActionPerformed
 
     /**

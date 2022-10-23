@@ -1,10 +1,4 @@
-/*
- * Ejemplo desarrollado por Erick Navarro
- * Blog: e-navarro.blogspot.com
- * Septiembre - 2015
- */
-
-package arbol;
+package funciones;
 
 import java.util.LinkedList;
 
@@ -12,7 +6,6 @@ import java.util.LinkedList;
  * Clase tabla de símbolos, que realiza todas las operaciones habituales de una 
  * tabla de símbolos, hereda de la clase lista enlazada porque básicamente la tabla
  * es una lista de símbolos.
- * @author Erick
  */
 public class TablaDeSimbolos extends LinkedList<Simbolo>{
     /**

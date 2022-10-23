@@ -1,22 +1,15 @@
-/*
- * Ejemplo desarrollado por Erick Navarro
- * Blog: e-navarro.blogspot.com
- * Septiembre - 2015
- */
-
-package arbol;
+package funciones;
 
 /**
  * Clase que ejecuta las acciones de una operación, ya sea aritmética o realacional
  * y que implementa la interfaz de instrucción, ya que estas operaciones pueden 
  * ejecutarse y al ejecutarse retornan un valor.
- * @author Erick
  */
 public class Operacion implements Instruccion{
     /**
      * Enumeración del tipo de operación que puede ser ejecutada por esta clase.
      */
-    public static enum Tipo_operacion{
+     public static enum Tipo_operacion{
         SUMA,
         RESTA,
         MULTIPLICACION,

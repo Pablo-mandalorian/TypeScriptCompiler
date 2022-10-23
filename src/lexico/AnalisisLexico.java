@@ -125,9 +125,6 @@ public class AnalisisLexico{
                         break loop;
                     }
                 }
-                // Reserved Words
-                // Contextual Words
-                // Strict Mode Reserved Words
                             }           
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AnalisisLexico.class.getName()).log(Level.SEVERE, null, ex);

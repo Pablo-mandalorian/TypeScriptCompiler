@@ -1,21 +1,13 @@
-/*
- * Ejemplo desarrollado por Erick Navarro
- * Blog: e-navarro.blogspot.com
- * Septiembre - 2015
- */
+package analizadorSintacto;
 
-package interpretesencillo;
-
-import arbol.Instruccion;
-import arbol.TablaDeSimbolos;
+import funciones.Instruccion;
+import funciones.TablaDeSimbolos;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.util.LinkedList;
 
 /**
  * Clase principal de la aplicación
- * @author Erick
  */
 public class InterpreteSencillo {
 

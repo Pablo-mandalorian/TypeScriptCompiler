@@ -1,27 +1,22 @@
-/*
- * Ejemplo desarrollado por Erick Navarro
- * Blog: e-navarro.blogspot.com
- * Septiembre - 2015
- */
-
 package analizadores; 
 
-import arbol.Asignacion;
-import arbol.Declaracion;
-import arbol.Imprimir;
-import arbol.If;
-import arbol.Instruccion;
-import arbol.Mientras;
-import arbol.Operacion;
-import arbol.Simbolo.Tipo;
-import arbol.TablaDeSimbolos;
+import funciones.Asignacion;
+import funciones.Declaracion;
+import funciones.Imprimir;
+import funciones.If;
+import funciones.Instruccion;
+import funciones.Mientras;
+import funciones.For;
+import funciones.Operacion;
+import funciones.Simbolo.Tipo;
+import funciones.TablaDeSimbolos;
 import java.util.LinkedList;
 import java_cup.runtime.*;
 
 parser code 
 {:
     /**
-     * Variable en la que se almacena el arbol de sintaxis abstracta que se 
+     * Variable en la que se almacena el funciones de sintaxis abstracta que se 
      * genera luego del analisis sintáctico.
      */
     public LinkedList<Instruccion> AST;
@@ -48,6 +43,7 @@ parser code
 
 terminal String PTCOMA,PARIZQ,PARDER,LLAVIZQ,LLAVDER, DOS_PUNTOS, PUNTO, COMILLA_SIMPLE, COMA;
 terminal String MAS,MENOS,POR,DIVIDIDO,CONCAT;
+terminal String MASMAS;
 terminal String MENQUE,MAYQUE,IGUALQUE,NIGUALQUE;
 terminal String ENTERO;
 terminal String DECIMAL;
@@ -97,9 +93,17 @@ instruccion ::=
    RIMPRIMIR PARIZQ expresion_cadena:a PARDER PTCOMA                          {:RESULT=new Imprimir(a);:}
  | RMIENTRAS PARIZQ expresion_logica:a PARDER LLAVIZQ instrucciones:b LLAVDER {:RESULT=new Mientras(a,b);:}
  | IDENTIFICADOR:a DOS_PUNTOS RNUMERO  PTCOMA                                             {:RESULT=new Declaracion(a,Tipo.NUMERO);:}
+ | VAR IDENTIFICADOR:a DOS_PUNTOS RNUMERO  PTCOMA                                             {:RESULT=new Declaracion(a,Tipo.NUMERO);:}
+ | SET IDENTIFICADOR:a DOS_PUNTOS RNUMERO  PTCOMA                                             {:RESULT=new Declaracion(a,Tipo.NUMERO);:} 
+ | LET IDENTIFICADOR:a DOS_PUNTOS RNUMERO  PTCOMA                                             {:RESULT=new Declaracion(a,Tipo.NUMERO);:} 
  | IDENTIFICADOR:a IGUAL expresion_numerica:b PTCOMA                          {:RESULT=new Asignacion(a,b);:}  
  | RIF PARIZQ expresion_logica:a PARDER LLAVIZQ instrucciones:b LLAVDER       {:RESULT=new If(a,b);:}
  | RIF PARIZQ expresion_logica:a PARDER LLAVIZQ instrucciones:b LLAVDER  RELSE LLAVIZQ instrucciones:c LLAVDER {:RESULT=new If(a,b,c);:}
+ | FOR PARIZQ IDENTIFICADOR IGUAL expresion_numerica PTCOMA expresion_logica PTCOMA IDENTIFICADOR MASMAS PARDER LLAVIZQ instrucciones LLAVDER {:System.out.println("Ciclo for");:}
+ | IDENTIFICADOR PARIZQ PARDER LLAVIZQ instrucciones LLAVDER {:System.out.println("Method");:}
+ | FUNCTION IDENTIFICADOR PARIZQ PARDER DOS_PUNTOS RNUMERO LLAVIZQ instrucciones LLAVDER {:System.out.println("Function");:}
+ | FUNCTION IDENTIFICADOR PARIZQ IDENTIFICADOR DOS_PUNTOS RNUMERO COMA IDENTIFICADOR DOS_PUNTOS RNUMERO PARDER DOS_PUNTOS RNUMERO LLAVIZQ instrucciones LLAVDER {:System.out.println("Funcion con dos parametros");:}  
+ | SWITCH PARIZQ IDENTIFICADOR PARDER LLAVIZQ CASE ENTERO DOS_PUNTOS LLAVIZQ instrucciones BREAK PTCOMA LLAVDER CASE ENTERO DOS_PUNTOS LLAVIZQ instrucciones BREAK PTCOMA LLAVDER LLAVDER {:System.out.println("Switch case");:}
  | error
 ;
 

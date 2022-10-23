@@ -1,17 +1,10 @@
-/*
- * Ejemplo desarrollado por Erick Navarro
- * Blog: e-navarro.blogspot.com
- * Septiembre - 2015
- */
-
-package arbol;
+package funciones;
 
 /**
  * Clase símbolo, que es un nodo de la tabla de símbolos, estos símbolos son 
  * variables con su valor, identificador y tipo, actualmente todas las variables 
  * son de tipo número, pero se colocó la variable tipo por si se quisiera ampliar
  * el lenguaje y agregar más tipos.
- * @author Erick
  */
 public class Simbolo {
     private final Tipo tipo;

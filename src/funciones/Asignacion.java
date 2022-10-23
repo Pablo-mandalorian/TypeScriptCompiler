@@ -1,5 +1,4 @@
-
-package arbol;
+package funciones;
 
 
 public class Asignacion implements Instruccion{

@@ -1,17 +1,10 @@
-/*
- * Ejemplo desarrollado por Erick Navarro
- * Blog: e-navarro.blogspot.com
- * Septiembre - 2015
- */
-
-package arbol;
+package funciones;
 
 import java.util.LinkedList;
 
 /**
  * Clase que ejecuta las acciones de una instrucción si...entonces y que implementa
  * la interfaz de instrucción
- * @author Erick
  */
 public class If implements Instruccion{
     /**

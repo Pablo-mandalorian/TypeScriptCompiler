@@ -1,15 +1,8 @@
-/*
- * Ejemplo desarrollado por Erick Navarro
- * Blog: e-navarro.blogspot.com
- * Septiembre - 2015
- */
-
-package arbol;
+package funciones;
 
 /**
  * Clase que ejecuta las acciones de una instrucción imprimir y que implementa
  * la interfaz de instrucción
- * @author Erick
  */
 public class Imprimir implements Instruccion{
     /**
